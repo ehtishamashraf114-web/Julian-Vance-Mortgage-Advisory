@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-editorial: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-navy: #101C2C;
+  --color-navy-deep: #0B131E;
+  --color-navy-muted: #1A2B42;
+  --color-ivory: #F7F4EE;
+  --color-ivory-light: #FDFCF9;
+  --color-ivory-subtle: #ECE8DC;
+  --color-gold: #C6A56B;
+  --color-gold-light: #DFCA9D;
+  --color-gold-dark: #A6864C;
+  --color-charcoal: #292D32;
+  --color-charcoal-muted: #565D66;
+}
+
+/* Custom editorial styles & typography nuances */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+  }
+
+  h1, h2, h3, .font-serif-display {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #C6A56B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A6864C;
+}
+
+/* Custom print styles for loan comparison & amortization schedule */
+@media print {
+  header, footer, nav, .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
